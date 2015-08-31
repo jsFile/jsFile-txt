@@ -3,6 +3,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-jscs');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-blobify');
 
 
     /**
@@ -18,11 +19,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         //'jshint',
         'jscs',
-        'webpack'
-    ]);
-
-    grunt.registerTask('build:min', [
-        'build',
+        'webpack',
         'uglify'
     ]);
 };

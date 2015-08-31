@@ -15,8 +15,8 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            'dist/jsfile-txt.js',
-            'tests/unit/**/*.spec.js'
+            'tests/unit/**/*.spec.js',
+            'tests/filesCache.js'
         ],
 
         reporters: ['progress', 'coverage'],

@@ -5,7 +5,9 @@ module.exports = function (grunt) {
             entry: "./src/index.js",
             output: {
                 path: "dist/",
-                filename: "jsfile-txt.js"
+                filename: "jsfile-txt.js",
+                library: ["JsFileTxt"],
+                libraryTarget: "umd"
             },
 
             module: {
@@ -24,9 +26,9 @@ module.exports = function (grunt) {
                 {
                     "jsfile": {
                         root: "JsFile",
-                        commonjs2: "jsfile",
-                        commonjs: "jsfile",
-                        amd: "jsfile"
+                        commonjs2: "JsFile",
+                        commonjs: "JsFile",
+                        amd: "JsFile"
                     }
                 }
             ],

@@ -31,8 +31,5 @@ node_modules
 .idea
 .git
 .DS_Store
-tests/docs
-dist/partials
-src/_e
-tests/includes_built.js
 npm-debug.log
+tests/filesCache.js

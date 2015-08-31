@@ -18,4 +18,6 @@ class TxtEngine extends Engine {
     static mimeTypes = fileTypes.map(p => p.mime.join(','))
 }
 
-defineEngine('Txt', TxtEngine);
+defineEngine(TxtEngine);
+
+export default TxtEngine;
