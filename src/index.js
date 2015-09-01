@@ -1,21 +1,19 @@
 import {assign, Engine, defineEngine} from 'JsFile';
 import createDocument from './reader/createDocument';
 
-const fileTypes = [
-    {
-        extensions: ['txt'],
-        mime: ['text/plain']
-    }
-];
+const files = {
+    extension: ['txt'],
+    mime: ['text/plain']
+};
 
 class TxtEngine extends Engine {
     createDocument = createDocument
 
     parser = 'readSingleFile'
 
-    fileTypes = fileTypes
+    files = files
 
-    static mimeTypes = fileTypes.map(p => p.mime.join(','))
+    static mimeTypes = files.mime.slice(0)
 }
 
 defineEngine(TxtEngine);
