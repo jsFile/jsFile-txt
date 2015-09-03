@@ -13,6 +13,10 @@ class TxtEngine extends Engine {
 
     files = files
 
+    static test (file) {
+        return Boolean(file && Engine.validateFile(file, files));
+    }
+
     static mimeTypes = files.mime.slice(0)
 }
 

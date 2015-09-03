@@ -33,3 +33,4 @@ node_modules
 .DS_Store
 npm-debug.log
 tests/filesCache.js
+dist/workers

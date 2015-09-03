@@ -95,6 +95,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    _createClass(TxtEngine, null, [{
+	        key: 'test',
+	        value: function test(file) {
+	            return Boolean(file && _JsFile.Engine.validateFile(file, files));
+	        }
+	    }, {
 	        key: 'mimeTypes',
 	        value: files.mime.slice(0),
 	        enumerable: true
