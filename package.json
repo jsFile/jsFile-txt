@@ -1,6 +1,6 @@
 {
   "name": "jsfile-txt",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Engine for jsFile library to read all files as simple plain-text documents",
   "main": "dist/jsfile-txt.js",
   "scripts": {
