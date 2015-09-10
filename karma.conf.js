@@ -42,7 +42,7 @@ module.exports = function (config) {
             module: {
                 loaders: [
                     {
-                        test: /\.spec\.js/,
+                        test: /(spec|src)/,
                         loader: 'babel',
                         query: {
                             stage: 0
