@@ -1,4 +1,4 @@
-import {assign, Engine, defineEngine} from 'JsFile';
+import {Engine, defineEngine} from 'JsFile';
 import createDocument from './reader/createDocument';
 
 const files = {
