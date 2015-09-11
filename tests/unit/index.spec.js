@@ -35,7 +35,8 @@ describe('Txt Engine', () => {
                     assert.instanceOf(result, JsFile.Document, name);
                     const json = result.json();
                     assert.jsonSchema(json, documentSchema, name);
-                    assert.notEqual(json.length, 0, `File ${name} shouldn't be empty`);
+                    const isEmpty = !/textContent":"[^"]+"/.test(JSON.stringify(json));
+                    assert.isFalse(isEmpty, `File ${name} shouldn't be empty`);
                 }
             }
         }
