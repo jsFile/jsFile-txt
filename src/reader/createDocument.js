@@ -1,4 +1,6 @@
-import {Document} from 'JsFile';
+import JsFile from 'JsFile';
+const {Document} = JsFile;
+const {validateUrl} = JsFile.Engine;
 
 export default function (text) {
     return new Promise(function (resolve) {
@@ -16,7 +18,7 @@ export default function (text) {
                     element.properties.textContent = ts + ' ';
 
                     // is it a link?
-                    if (this.validateUrl(ts)) {
+                    if (validateUrl(ts)) {
                         const textContent = ts.replace(/\s+/, '');
 
                         element.properties.tagName = 'A';
