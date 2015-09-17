@@ -129,7 +129,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: true
 	});
 
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
 	var _JsFile = __webpack_require__(1);
+
+	var _JsFile2 = _interopRequireDefault(_JsFile);
+
+	var Document = _JsFile2['default'].Document;
+	var validateUrl = _JsFile2['default'].Engine.validateUrl;
 
 	exports['default'] = function (text) {
 	    return new Promise((function (resolve) {
@@ -142,12 +149,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	            textSections.forEach(function (ts) {
 	                if (ts) {
-	                    var _element = _JsFile.Document.elementPrototype;
+	                    var _element = Document.elementPrototype;
 	                    _element.properties.tagName = 'SPAN';
 	                    _element.properties.textContent = ts + ' ';
 
 	                    // is it a link?
-	                    if (this.validateUrl(ts)) {
+	                    if (validateUrl(ts)) {
 	                        var textContent = ts.replace(/\s+/, '');
 
 	                        _element.properties.tagName = 'A';
@@ -161,22 +168,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }, this);
 
 	            if (i < len - 1) {
-	                var _element2 = _JsFile.Document.elementPrototype;
+	                var _element2 = Document.elementPrototype;
 	                _element2.properties.tagName = 'BR';
 
 	                children.push(_element2);
 	            }
 	        }, this);
 
-	        var element = _JsFile.Document.elementPrototype;
+	        var element = Document.elementPrototype;
 	        element.properties.tagName = 'P';
 	        element.children = children;
 	        children = null;
 
-	        var page = _JsFile.Document.elementPrototype;
+	        var page = Document.elementPrototype;
 	        page.children = [element];
 
-	        resolve(new _JsFile.Document({
+	        resolve(new Document({
 	            name: this.fileName,
 	            wordsCount: text.split(/\s+/).length,
 	            pages: [page]
