@@ -186,7 +186,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        resolve(new Document({
 	            name: this.fileName,
 	            wordsCount: text.split(/\s+/).length,
-	            pages: [page]
+	            content: [page]
 	        }));
 	    }).bind(this));
 	};

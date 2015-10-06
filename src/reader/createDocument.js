@@ -50,7 +50,7 @@ export default function (text) {
         resolve(new Document({
             name: this.fileName,
             wordsCount: text.split(/\s+/).length,
-            pages: [page]
+            content: [page]
         }));
     }.bind(this));
 }
