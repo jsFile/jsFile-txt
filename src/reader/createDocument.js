@@ -48,8 +48,10 @@ export default function (text) {
         page.children = [element];
 
         resolve(new Document({
-            name: this.fileName,
-            wordsCount: text.split(/\s+/).length,
+            meta: {
+                name: this.fileName,
+                wordsCount: text.split(/\s+/).length,
+            },
             content: [page]
         }));
     }.bind(this));
