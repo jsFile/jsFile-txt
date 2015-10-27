@@ -1,4 +1,5 @@
-# jsFile-txt [![Build Status](https://secure.travis-ci.org/jsFile/jsFile-txt.png?branch=master)](https://travis-ci.org/jsFile/jsFile-txt)
+# jsFile-txt [![Build Status](https://secure.travis-ci.org/jsFile/jsFile-txt.png?branch=master)](https://travis-ci.org/jsFile/jsFile-txt) [![Coverage Status](https://coveralls.io/repos/jsFile/jsFile-txt/badge.svg?branch=master&service=github)](https://coveralls.io/github/jsFile/jsFile-txt?branch=master)
+
 Engine for jsFile library to read all files as simple [plain-text](https://en.wikipedia.org/wiki/Text_file) documents (.txt)
 
 
