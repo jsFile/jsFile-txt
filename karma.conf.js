@@ -1,6 +1,3 @@
-// Karma configuration
-// Generated on Mon Aug 10 2015 20:23:57 GMT+0200 (CEST)
-
 module.exports = function (config) {
     config.set({
 
@@ -24,7 +21,7 @@ module.exports = function (config) {
         reporters: ['progress', 'coverage'],
 
         coverageReporter: {
-            type: 'html',
+            type: 'lcov',
             dir: 'tests/coverage/'
         },
 
@@ -34,7 +31,7 @@ module.exports = function (config) {
 
 
         preprocessors: {
-            'dist/jsfile.js': ['coverage'],
+            'src/**/*.js': ['coverage'],
             'tests/unit/**/*.spec.js': ['webpack']
         },
 
@@ -45,10 +42,16 @@ module.exports = function (config) {
                         test: /(spec|src)/,
                         loader: 'babel',
                         query: {
-                            stage: 0
+                            stage: 0,
+                            auxiliaryCommentBefore: 'istanbul ignore next'
                         }
                     }
-                ]
+                ],
+                postLoaders: [{
+                    test: /\.js/,
+                    exclude: /(node_modules|bower_components|dist|tests)/,
+                    loader: 'istanbul-instrumenter'
+                }]
             }
         },
 

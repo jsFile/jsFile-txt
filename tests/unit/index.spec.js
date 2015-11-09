@@ -19,6 +19,10 @@ describe('Txt Engine', () => {
         assert.isFunction(TxtEngine);
     });
 
+    it('should have files for testing', () => {
+        assert.notEqual(Object.keys(files || {}).length, 0);
+    });
+
     it('should read the file', () => {
         const queue = [];
         for (let name in files) {
