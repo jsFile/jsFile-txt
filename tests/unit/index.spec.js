@@ -7,7 +7,7 @@ import TxtEngine from './../../src/index';
 chai.use(chaiJsonSchema);
 const assert = chai.assert;
 
-describe('Txt Engine', () => {
+describe('jsFile-txt', () => {
     let files;
     const documentSchema = schemas.document;
 
@@ -23,16 +23,17 @@ describe('Txt Engine', () => {
         assert.notEqual(Object.keys(files || {}).length, 0);
     });
 
-    it('should read the file', () => {
+    it('should read the file', function () {
+        this.timeout(15000);
         const queue = [];
-        for (let name in files) {
+        let name;
+        for (name in files) {
             if (files.hasOwnProperty(name)) {
                 (function (file, name) {
                     const jf = new JsFile(file, {
                         workerPath: '/base/dist/workers/'
                     });
                     const promise = jf.read().then(done, done);
-
                     queue.push(promise);
 
                     function done (result) {
@@ -41,8 +42,8 @@ describe('Txt Engine', () => {
                         const html = result.html();
                         const text = html.textContent || '';
                         assert.jsonSchema(json, documentSchema, name);
-                        assert.notEqual(text.length, 0, `File ${name} shouldn't be empty`);
-                        assert.notEqual(result.name.length, 0, `Engine should parse a name of file ${name}`);
+                        assert.notEqual(text.length, 0, 'File ' + name + ' shouldn\'t be empty');
+                        assert.notEqual(result.name.length, 0, 'Engine should parse a name of file ' + name);
                     }
                 }(files[name], name));
             }

@@ -50,7 +50,7 @@ export default function (text) {
         resolve(new Document({
             meta: {
                 name: this.fileName,
-                wordsCount: text.split(/\s+/).length,
+                wordsCount: text.split(/\s+/).length
             },
             content: [page]
         }));
