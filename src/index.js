@@ -1,7 +1,7 @@
 import JsFile from 'JsFile';
 import createDocument from './reader/createDocument';
 
-const {Engine, defineEngine} = JsFile;
+const {Engine} = JsFile;
 
 /**
  * @description Supported files by engine
@@ -26,7 +26,5 @@ class TxtEngine extends Engine {
 }
 
 TxtEngine.mimeTypes = files.mime.slice(0);
-
-defineEngine(TxtEngine);
 
 export default TxtEngine;

@@ -13,10 +13,7 @@ describe('jsFile-txt', () => {
 
     before(() => {
         files = window.files;
-    });
-
-    it('should exist', () => {
-        assert.isFunction(TxtEngine);
+        JsFile.defineEngine(TxtEngine);
     });
 
     it('should have files for testing', () => {
