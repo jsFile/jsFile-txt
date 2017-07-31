@@ -2,7 +2,7 @@
 
 Engine for jsFile library to read all files as simple [plain-text](https://en.wikipedia.org/wiki/Text_file) documents (.txt)
 
-
+> ### :warning: This project is deprecated in favour of https://github.com/file2html/file2html
 
 ## Installation
 ### via NPM
